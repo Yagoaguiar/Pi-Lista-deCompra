@@ -24,7 +24,7 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     width: '100%',
     backgroundColor: '#08090E',
-    color: '#ffffff', // tirar dúvida com professor pq não aparece no android
+    color: '#ffffff', 
     placeholderTextColor: 'white',
   },
   button: {

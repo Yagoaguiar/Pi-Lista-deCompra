@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import styles from '../styles/Forgot/Forgot';
 
 const Forgot = () => {
   const [email, setEmail] = useState('');
@@ -7,18 +8,18 @@ const Forgot = () => {
   const handleResetPassword = () => {
 
   };
-
-  return (
-    <View >
-      <Text >Esqueci a Senha</Text>
-      <Text >Digite seu email para redefinir a senha:</Text>
+return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Esqueci a Senha</Text>
+      <Text style={styles.description}>Digite seu email para redefinir a senha:</Text>
       <TextInput
+        style={styles.input}
         placeholder="Email"
         onChangeText={(text) => setEmail(text)}
         value={email}
       />
-      <TouchableOpacity  onPress={handleResetPassword}>
-        <Text>Enviar</Text>
+      <TouchableOpacity style={styles.button} onPress={handleResetPassword}>
+        <Text style={styles.buttonText}>Enviar</Text>
       </TouchableOpacity>
     </View>
   );

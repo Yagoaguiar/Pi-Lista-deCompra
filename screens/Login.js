@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../styles/Login/Login';
 import Register from './Register';
-import Home from './home';
+import Home from './Home';
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');

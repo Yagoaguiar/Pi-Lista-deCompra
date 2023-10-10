@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Importe useNavigation
+import { useNavigation } from '@react-navigation/native'; 
 import styles from '../styles/Register/Register';
 
 const Register = () => {
-  const navigation = useNavigation({ navigation }); // Obtenha o objeto de navegação
+  const navigation = useNavigation({ navigation }); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -19,18 +19,18 @@ const Register = () => {
       return;
     }
 
-    // Simulação de registro de usuário (substitua pela lógica real)
+
     console.log('Email:', email);
     console.log('Senha:', password);
 
-    // Limpe os campos de entrada após o registro bem-sucedido.
+
     setEmail('');
     setPassword('');
     setConfirmPassword('');
     setErrorMessage(null);
 
 
-    navigation.navigate('Home'); // Substitua 'Home' pelo nome da sua tela "Home".
+    navigation.navigate('Home'); 
   };
 
   return (
@@ -40,12 +40,14 @@ const Register = () => {
       <TextInput
         style={styles.input}
         placeholder="Email"
+        placeholderTextColor="white"
         onChangeText={(text) => setEmail(text)}
         value={email}
       />
       <TextInput
         style={styles.input}
         placeholder="Senha"
+        placeholderTextColor="white"
         onChangeText={(text) => setPassword(text)}
         secureTextEntry
         value={password}
@@ -54,6 +56,7 @@ const Register = () => {
         style={styles.input}
         placeholder="Confirme a senha"
         onChangeText={(text) => setConfirmPassword(text)}
+        placeholderTextColor="white"
         secureTextEntry
         value={confirmPassword}
       />

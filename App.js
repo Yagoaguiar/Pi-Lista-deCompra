@@ -7,12 +7,13 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import Home from './screens/home';
 import Forgot from './screens/Forgot';
+import Profile from './screens/Profile';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); //deixar como true para conseguir ter acesso ao app 
+  const [isLoggedIn, setIsLoggedIn] = useState(true); //deixar como true para conseguir ter acesso ao professor
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -27,7 +28,8 @@ export default function App() {
       {isLoggedIn ? (
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} />
-          {/* Adicione outras guias aqui, se necessário */}
+          <Tab.Screen name="Profile" component={Profile} />
+          
         </Tab.Navigator>
       ) : (
         <Stack.Navigator initialRouteName="Login">
@@ -35,6 +37,7 @@ export default function App() {
           <Stack.Screen name="Register" component={Register} options={{ title: 'Cadastre-se' }} />
           <Stack.Screen name="Forgot" component={Forgot} options={{ title: 'Esqueci senha' }} />
           <Stack.Screen name="Home" component={Home} options={{ title: 'Lista de Tarefa' }} />
+           <Stack.Screen name="Profile" component={Profile} options={{ title: 'Meu pe' }} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

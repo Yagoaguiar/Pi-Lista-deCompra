@@ -5,8 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Login from './screens/Login';
 import Register from './screens/Register';
-import Home from './screens/Home';
+import Home from './screens/home';
 import Forgot from './screens/Forgot';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,11 +23,11 @@ const BottomTabs = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} options={{title:'Cadastre-se'}} />
-        <Stack.Screen name="Forgot" component={Forgot}  options={{title:'Esqueci senha'}}/>
-        <Tab.Screen name="Home" component={Home} />
+        <Stack.Screen name="Forgot" component={Forgot} options={{title:'Esqueci senha'}}/>
+        <Stack.Screen name="Home" component={BottomTabs} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

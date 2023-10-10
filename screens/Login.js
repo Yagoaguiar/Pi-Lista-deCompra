@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../styles/Login/Login';
-import Register from './Register';
-import Home from './Home';
+import Home from './home';
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
@@ -12,7 +11,6 @@ export default function Login({ navigation }) {
   const handleLogin = () => {
     if (validateFields()) {
       console.log(`Email: ${email}, Senha: ${senha}`);
-      // preciso colocar a lógica de login depois que estiver concluída. Com firabase ou qualquer outro metódo que faça a validação
       
       navigation.navigate('Home');
     }
@@ -26,10 +24,11 @@ export default function Login({ navigation }) {
     return true;
   };
 
-  const Register = () => {
+  const handleRegister = () => {
     navigation.navigate('Register');
   };
-  const Forgot = () => {
+
+  const handleForgot = () => {
     navigation.navigate('Forgot');
   };
 
@@ -40,7 +39,7 @@ export default function Login({ navigation }) {
         style={styles.input}
         placeholder="Email"
         placeholderTextColor="white"
-        keyboardType="email-adress"
+        keyboardType="email-address"
         onChangeText={(text) => setEmail(text)}
         value={email}
       />
@@ -54,7 +53,7 @@ export default function Login({ navigation }) {
         secureTextEntry={true}
       />
 
-      <TouchableOpacity style={styles.signUpButton} onPress={Forgot}>
+      <TouchableOpacity style={styles.signUpButton} onPress={handleForgot}>
         <Text style={styles.forgotButtonText}>Esqueci senha</Text>
       </TouchableOpacity>
 
@@ -62,12 +61,9 @@ export default function Login({ navigation }) {
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.signUpButton} onPress={Register}>
+      <TouchableOpacity style={styles.signUpButton} onPress={handleRegister}>
         <Text style={styles.registerButtonText}>Novo aqui, cadastre-se</Text>
       </TouchableOpacity>
-
-
-      
     </View>
   );
 }

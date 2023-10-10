@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Importe useNavigation
+import { useNavigation } from '@react-navigation/native'; 
 import styles from '../styles/Forgot/Forgot';
 
 const Forgot = () => {
   const [email, setEmail] = useState('');
-  const navigation = useNavigation({ navigation }); // Obtenha a referência à navegação
+  const navigation = useNavigation({ navigation }); 
 
 
   return (

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: 'black', 
   },
-  description: { // Certifique-se de que 'description' está definido no seu arquivo de estilo
+  description: { 
     fontSize: 16,
     marginBottom: 20,
   },

@@ -12,9 +12,6 @@ const Profile = ({ navigation }) => {
       <Text>Usuário</Text>
       <Button
         title="Sair"
-        onPress={() => {
-          navigation.popToTop();
-        }}
       />
     </View>
   );
